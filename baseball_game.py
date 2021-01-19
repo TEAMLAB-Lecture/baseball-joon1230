@@ -270,7 +270,7 @@ def play_ball():
             print('Wrong Input, Input again')
             continue
         result = get_strikes_or_ball(user_input, random_number)
-        print(f"Strikes : {result[0]} , Ball : {result[1]}")
+        print(f"Strikes : {result[0]} , Balls : {result[1]}")
         if result[0] == 3:
             while True:
                 answer = str(input("You win, one more(Y/N)?"))
@@ -286,7 +286,7 @@ def play_ball():
                 break
             break
 
-            
+
 def main():
     print("Play Baseball")
     play_ball()
