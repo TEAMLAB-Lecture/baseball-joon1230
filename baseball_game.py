@@ -255,9 +255,7 @@ def is_no(one_more_input):
     # ==================================
     return False
 
-
-def main():
-    print("Play Baseball")
+def play_ball():
     user_input = 999
     random_number = str(get_not_duplicated_three_digit_number())
     print("Random Number is : ", random_number)
@@ -268,26 +266,30 @@ def main():
         if user_input == "0":
             break
 
-        if not(is_validated_number(user_input)):
+        if not (is_validated_number(user_input)):
             print('Wrong Input, Input again')
             continue
         result = get_strikes_or_ball(user_input, random_number)
-        print(f"Strike : {result[0]} , Ball : {result[1]}")
+        print(f"Strikes : {result[0]} , Ball : {result[1]}")
         if result[0] == 3:
             while True:
                 answer = str(input("You win, one more(Y/N)?"))
-                if not(is_yes(answer) or is_no(answer)):
+                if not (is_yes(answer) or is_no(answer)):
                     print('Wrong Input, Input again')
                     continue
                 else:
                     break
 
             if is_yes(answer):
-                main()
+                play_ball()
             elif is_no(answer):
                 break
             break
 
+            
+def main():
+    print("Play Baseball")
+    play_ball()
 
     # ==================================
     print("Thank you for using this program")
